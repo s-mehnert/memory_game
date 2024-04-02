@@ -49,6 +49,22 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "peach",
             img: "images/peach-icon.svg"
+        },
+        {
+            name: "coconut",
+            img: "images/coconut-icon.svg"
+        },
+        {
+            name: "coconut",
+            img: "images/coconut-icon.svg"
+        },
+        {
+            name: "strawberry",
+            img: "images/strawberry-icon.svg"
+        },
+        {
+            name: "strawberry",
+            img: "images/strawberry-icon.svg"
         }
     ]
 
@@ -56,9 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const grid = document.querySelector(".grid");
     const resultDisplay = document.querySelector("#result");
+    const attemptDisplay = document.querySelector("#attempts");
     let cardsChosen = [];
     let cardsChosenId = [];
     let cardsWon = [];
+    let attempts = 0;
 
     //create board
     function createBoard() {
@@ -77,20 +95,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const optionOneId = cardsChosenId[0];
         const optionTwoId = cardsChosenId[1];
         if (cardsChosen[0] === cardsChosen[1]) {
-            alert("You found a match!");
+            // alert("You found a match!");
             cards[optionOneId].setAttribute("src", "images/blank.svg");
             cards[optionTwoId].setAttribute("src", "images/blank.svg");
             cardsWon.push(cardsChosen);
         } else {
-            cards[optionOneId].setAttribute("src", "images/circle.svg");
-            cards[optionTwoId].setAttribute("src", "images/circle.svg");
-            alert("Sorry, try again.");
+            setTimeout(() => {
+                cards[optionOneId].setAttribute("src", "images/circle.svg");
+                cards[optionTwoId].setAttribute("src", "images/circle.svg");
+            }, "500");
+            cards[optionOneId].addEventListener("click", flipCard);
+            cards[optionTwoId]. addEventListener("click", flipCard);
+            // alert("Sorry, try again.");
         }
         cardsChosen = [];
         cardsChosenId = [];
         resultDisplay.textContent = cardsWon.length;
+        attemptDisplay.textContent = attempts;
         if (cardsWon.length === cardArray.length/2) {
             resultDisplay.textContent = "Congratulations! You found them all!";
+            attemptDisplay.textContent = `It took you ${attempts} attempts to finish the game.`;
         }
     }
 
@@ -100,8 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
         cardsChosen.push(cardArray[cardId].name);
         cardsChosenId.push(cardId);
         this.setAttribute("src", cardArray[cardId].img);
+        this.removeEventListener("click", flipCard);
         if (cardsChosen.length === 2) {
             setTimeout(checkForMatch, 500);
+            attempts += 1;
         }
     }
 
