@@ -1,8 +1,9 @@
 <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
 	<rect fill="black" x="0" y="0" height="100" width="100"></rect>
-	<circle fill="green" cx="50" cy="50" r="50"></circle>
-	<circle fill="black" cx="50" cy="50" r="40"></circle>
-	<circle fill="green" cx="50" cy="50" r="30"></circle>
-	<circle fill="black" cx="50" cy="50" r="20"></circle>
-	<circle fill="green" cx="50" cy="50" r="10"></circle>
+	<circle fill="#6fcb9f" cx="50" cy="50" r="50"></circle>
+	<circle fill="#fb2e01" cx="50" cy="50" r="40"></circle>
+	<circle fill="#ffe28a" cx="50" cy="50" r="30"></circle>
+	<circle fill="#6fcb9f" cx="50" cy="50" r="20"></circle>
+	<circle fill="#fb2e01" cx="50" cy="50" r="10"></circle>
+	
 </svg>

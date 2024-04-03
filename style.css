@@ -1,6 +1,14 @@
 body {
     background-color: black;
-    color: white;
+    color: #ffe28a;
+}
+
+h1 {
+    color: #6fcb9f;
+}
+
+h3 {
+    color: #fb2e01;
 }
 
 .grid {

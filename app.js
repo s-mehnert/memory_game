@@ -114,7 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
         attemptDisplay.textContent = attempts;
         if (cardsWon.length === cardArray.length/2) {
             resultDisplay.textContent = "Congratulations! You found them all!";
-            attemptDisplay.textContent = `It took you ${attempts} attempts to finish the game.`;
+            if (attempts < 10) {
+                attemptDisplay.textContent = `You must have cheated! It took you only ${attempts} attempts to finish the game.`;
+            } else if (attempts < 15) {
+                attemptDisplay.textContent = `Good game! It took you ${attempts} attempts to finish the game.`;
+            } else {
+                attemptDisplay.textContent = `Looks like your mind was elsewhere. It took you ${attempts} attempts to finish the game.`;   
+            }
         }
     }
 
