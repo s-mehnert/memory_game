@@ -16,14 +16,18 @@ h3 {
     color: #fb2e01;
 }
 
+a {
+    color: #6fcb9f;
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;
     height: 60%;
-    width: 100%;
+    width: 80%;
 }
 
 img {
-    height: 7rem;
-    width: 7rem;
+    height: 5em;
+    width: 5em;
 }
